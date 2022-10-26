@@ -11,7 +11,7 @@ Product.init(
   {
     id: {
       type: DataTypes.INTEGER,
-      allowNull: true,
+      allowNull: false,
      primaryKey: true,
       autoIncrement: true
     },
@@ -35,10 +35,12 @@ Product.init(
       },
       category_id: {
         type: DataTypes.INTEGER,
-
-      }
-      //foreign key references the category(id)
-    }
+        references: {
+          model: 'catergory',
+          key: 'id',
+        },
+      },
+    },
   },
   {
     sequelize,
