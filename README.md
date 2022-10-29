@@ -1,7 +1,7 @@
 # E-commerce Back End 
 Demonstration:
 
-## Acceptance Criteria:
+## Goals of this Project:
 GIVEN a functional Express.js API
 
 WHEN I add my database name, MySQL username, and MySQL password to an environment variable file
@@ -23,3 +23,11 @@ THEN the data for each of these routes is displayed in a formatted JSON
 WHEN I test API POST, PUT, and DELETE routes in Insomnia Core
 
 THEN I am able to successfully create, update, and delete data in my database
+
+## Installation:
+You will need to install "mysql2", "sequelize", "dotenv", and "express".
+
+## What I Learned:
+I began with a starter code and needed to modify it to satisfy the goals. The comments in the files indicate what code I personally wrote. 
+
+As this project runs completely on the back end, it was all about testing the api routes that I wrote in Insomnia. The biggest takeaways were about Insomnia as a tool and its capabilites. 
