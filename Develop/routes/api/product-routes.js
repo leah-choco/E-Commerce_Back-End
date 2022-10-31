@@ -3,7 +3,9 @@ const { Product, Category, Tag, ProductTag } = require('../../models');
 
 // The `/api/products` endpoint
 
-// get all products
+//I did not write all the routes within this file.
+
+//This route finds all the products. I did write this. It's associated with Category and Tag using ProductTag.
 router.get('/', async (req, res) => {
   try{
     const productData = await Product.findAll({
@@ -13,11 +15,9 @@ router.get('/', async (req, res) => {
   }catch (err) {
     res.status(500).json(err);
   }
-  // find all products
-  // be sure to include its associated Category and Tag data
 });
 
-// get one product //look into including tag as well
+//This route finds a single product by id. I did write this. It's associated with Category and Tag through ProductTag.
 router.get('/:id', async (req, res) => {
   try{
     const productData = await Product.findByPk(req.params.id, {
@@ -28,14 +28,14 @@ router.get('/:id', async (req, res) => {
       res.status(404).json({message: 'No product found with this id.'});
       return;
     }
+    
     res.status(200).json(productData);
   }catch (err) {
     res.status(500).json(err);
   }
-  // be sure to include its associated Category and Tag data
 });
 
-// create new product
+// This creates a new product, but I did not write this route.
 router.post('/', (req, res) => {
   /* req.body should look like this...
     {
@@ -67,7 +67,7 @@ router.post('/', (req, res) => {
     });
 });
 
-// update product
+//This updates a product by its id, but I did not write this.
 router.put('/:id', (req, res) => {
   // update product data
   Product.update(req.body, {
@@ -109,6 +109,7 @@ router.put('/:id', (req, res) => {
     });
 });
 
+//This route deletes a product by its id. I did write this.
 router.delete('/:id', async (req, res) => {
   try{
     const productData = await Product.destroy({
@@ -125,7 +126,6 @@ router.delete('/:id', async (req, res) => {
   }catch (err) {
     res.status(500).json(err);
   }
-  // delete one product by its `id` value
 });
 
 module.exports = router;
